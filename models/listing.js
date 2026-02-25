@@ -24,14 +24,21 @@ const listingSchema = new Schema({
         }
     },
     price: {
-        type: Number
+        type: Number,
     },
     location: {
-        type: String
+        type: String,
     },
     country: {
-        type: String
-    }
+        type: String,
+    },
+
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Review"
+        },
+    ],
 }); 
 
 const Listing = mongoose.model("Listing", listingSchema);

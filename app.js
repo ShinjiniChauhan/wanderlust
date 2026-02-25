@@ -5,6 +5,7 @@ const Listing = require("./models/listing");
 const path = require("path");
 const methodOverride = require("method-override");
 const engine = require("ejs-mate");
+const Review = require("./models/review.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -78,6 +79,24 @@ app.delete("/listings/:id" ,async (req,res) => {
     let deleteListing = await Listing.findByIdAndDelete(id);
     console.log(deleteListing);
     res.redirect("/listings");
+
+});
+
+//Reviews
+//Post Route
+
+app.post("/listings/:id/reviews",async(req ,res) => {
+    let listing = await Listing.findById(req.params.id).populate("reviews");
+    let newReview = new Review(req.body.review);
+
+    listing.reviews.push(newReview);
+
+    await newReview.save();
+    await listing.save();
+
+    console.log("new review saved");
+    console.log(req.body);
+    res.redirect(`/listings/${listing._id}`)
 
 })
 // app.get("/testListing", async (req ,res) => {
