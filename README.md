@@ -1,20 +1,30 @@
 # 🌍 Wanderlust 
+🚀 Live Demo: https://wanderlust-5bzx.onrender.com
 
-Wanderlust is an Airbnb-inspired full-stack web application where users can create, explore, and manage property listings along with reviews and ratings.
+Wanderlust is a full-stack Airbnb-inspired web application that allows users to explore, create, and manage property listings. Users can also add reviews and ratings.
 
 ## ✨ Features
-- User authentication (Login / Signup / Logout)
-- Create, edit, and delete listings
+- Secure User authentication (Login / Signup / Logout)
+- Full CRUD Operations for Listings
 - Upload images for Listings
-- Add Reviews and Ratings
-- View property details
+- Reviews and Ratings System
+- Delete Listings & Reviews
 - Responsive design
 
 ## 🛠️ Tech Stack
-- Frontend: HTML, CSS, JavaScript, EJS
+- Frontend: HTML, CSS, JavaScript, EJS(Templating Engine)
 - Backend: Node.js, Express
 - Database: MongoDB
-- Other: Cloudinary
+- Tools & Libraries: Cloudinary(Image Upload), Multer (File Handling), Express Session & Flash
+
+## ⚙️ Installation & Setup
+git clone https://github.com/ShinjiniChauhan/wanderlust.git
+cd wanderlust
+npm install
+npm start
+
+## ⚡ Project Status
+✅ Live and fully functional
 
 ## 🙌 Acknowledgement
 
